@@ -17,17 +17,17 @@ Welke elementen raakt elke selector? Eén zin per selector.
 Vul de eerste twee kolommen in vóór je de pagina opent. Trede: herkomst, specificiteit, volgorde of overerving (of iets anders, benoem het).
 
 | vraag | mijn voorspelling (kleur) | beslissende trede | uitkomst in de browser | juist? |
-|---|---|---|---|---|
-| 1 | | | | |
-| 2 | | | | |
-| 3 | | | | |
-| 4 | | | | |
-| 5 | | | | |
-| 6 | | | | |
-| 7 | | | | |
-| 8 | | | | |
-| 9 | | | | |
-| 10 | | | | |
+|---    |---                        |---                |---                     |---     |
+| 1     | groen                     | a                 | | |
+| 2     | blauw                     | de laats uigevoerd| | |
+| 3     | rood                      | class             | | |
+| 4     | rood                      | > overule         | | |
+| 5     | blauw                     | id > class        | | |
+| 6     | blauw                     | .v6 ≠ .v6-tekst   | | |
+| 7     | rood                      |                   | | |
+| 8     | blauw                     |                   | | |
+| 9     | rood                      | important         | | |
+| 10    | groen                     | | | |
 
 Bij welke vraag zat je fout, en wat was de reden? (Alles juist? Welke vraag duurde het langst, en waarom?)
 
