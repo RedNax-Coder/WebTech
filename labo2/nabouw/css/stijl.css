@@ -1,0 +1,23 @@
+:root{
+    --color-paper: #fbf7f0;
+    --color-ink: #2b2b2b;
+    --color-muted:#6b6b6b;
+    --color-accent: #b5451b;
+    --color-zebra: #f1e9dc;
+    --font-heading: Georgia;
+    --font-text: Verdana;
+}
+body{
+    background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+h1, h2, h3{
+    font-family: var(--font-heading);
+    color: var(--color-accent);
+}
+li:nth-child(odd){
+    background-color: var(--color-zebra);
+}
