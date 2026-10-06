@@ -43,3 +43,9 @@ ul{
 .darkorange{
     background-color: var(--darkorange-color);
 }
+h2{
+    margin-bottom: 1rem;
+}
+span{
+    margin-left: 1rem;
+}
