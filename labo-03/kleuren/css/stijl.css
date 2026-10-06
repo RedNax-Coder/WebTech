@@ -19,6 +19,7 @@ body{
 li{
     height: 40vh;
     list-style: none;
+    padding-top: 15vh;
 }
 ul{
     margin: 0;
