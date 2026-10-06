@@ -2,7 +2,51 @@
 
 /* === tokens === */
 :root {
-
+--oranje-color:#ec4b03;
+--paars-color:#b99ec1;
+--geel-color:#f9b700;
+--randen-width:0.75rem;
 }
 
 /* === your rules === */
+body{
+    font-family: Georgia, serif;
+  font-weight: bold;
+  text-align: center;
+}
+/* Labo 3 — Donut
+   Enkel de buitenste box krijgt een maat in vh (3.2);
+   alles daarbinnen is een percentage van zijn ouder. */
+
+main {
+  /* Oranje vierkant: 90vh, gecentreerd met 5vh boven en onder (5+90+5 = 100vh) */
+  width: 90vh;
+  height: 90vh;
+  margin: 5vh auto;
+  background-color: #ec4b03;
+  border: 0.75rem solid black;
+}
+
+main > div {
+  /* Paarse cirkel: 70% van zijn ouder, 15% marge rondom */
+  width: 70%;
+  height: 70%; /* procentuele hoogte werkt: de ouder heeft een expliciete hoogte (F3.2) */
+  margin: 15%;
+  background-color: #b99ec1;
+  border: 0.75rem solid black;
+  border-radius: 50%;       /* vierkant wordt cirkel */
+  overflow: hidden;          /* wat buiten de cirkel valt, is weg (3.8) */
+}
+
+h1 {
+  /* Geel vierkant: 90% van de cirkel, naar linksboven met negatieve marge (3.6) */
+  width: 90%;
+  height: 90%;
+  margin-top: -7%;
+  margin-left: -7%;
+  background-color: #f9b700;
+  border: 0.75rem solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
