@@ -6,3 +6,26 @@
 }
 
 /* === your rules === */
+body{
+    background-color: #ef8875;
+    text-align: left;
+    margin-top: 5rem;
+    margin-left: 5rem;
+}
+h1{
+    border: 0.25rem solid black;
+    box-shadow: 0.5rem 0.5rem black;
+    width: 15rem;
+    background-color: #ffd500;
+    border-bottom: 0
+}
+h2{
+    border: 0.25rem solid black;
+    box-shadow: 0.25rem 0.5rem black;
+    width: 35rem;
+    height: 10rem;
+    font-size: 3.5rem;
+    font-weight: 700;
+    background-color: white;
+    
+}
