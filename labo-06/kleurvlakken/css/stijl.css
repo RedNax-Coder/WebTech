@@ -1,10 +1,53 @@
-/* stijl.css - labo 6, kleurvlakken (reset.css is linked before this file) */
-
-/* === tokens === */
 :root {
-
+    --color-red: #b90020;
+    --color-green: #349803;
+    --color-yellow: #ffcd00;
+    --color-blue: #006aff;
 }
 
-/* === base: narrow screens first === */
+* {
+    box-sizing: border-box;
+}
 
-/* === media queries: below the base rules === */
+body {
+    margin: 0;
+}
+
+main {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, minmax(0, 1fr));
+}
+
+.vlak.rood {
+    background-color: var(--color-red);
+}
+
+.vlak.groen {
+    background-color: var(--color-green);
+}
+
+.vlak.geel {
+    background-color: var(--color-yellow);
+}
+
+.vlak.blauw {
+    background-color: var(--color-blue);
+}
+
+/* Vanaf 600px: vier kolommen naast elkaar */
+@media (min-width: 600px) {
+    main {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+    }
+}
+
+/* Vanaf 800px: twee kolommen en twee rijen */
+@media (min-width: 800px) {
+    main {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+}

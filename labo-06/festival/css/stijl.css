@@ -2,9 +2,161 @@
 
 /* === tokens === */
 :root {
-
+  --color-papier: #fff8ee;
+  --color-inkt: #1a1a1a;
+  --color-gedempt: #6b6b6b;
+  --color-accent: #d6341c;
+  --color-lijn: #e3d9c8;
+  --font-kop: Georgia, serif;
+  --font-nkop: Verdana, sans-serif;
 }
 
 /* === base: narrow screens first === */
+body {
+  margin: 0;
+  background-color: var(--color-papier);
+  color: var(--color-inkt);
+  font-family: var(--font-nkop);
+  line-height: 1.6;
+}
 
-/* === media queries: below the base rules === */
+h1,
+h2 {
+  font-family: var(--font-kop);
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 1rem;
+}
+
+.logo {
+  color: var(--color-accent);
+  font-family: var(--font-kop);
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+nav,
+nav ul {
+  width: 100%;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav a {
+  display: block;
+  padding: 0.75rem 1.25rem;
+  border: 2px solid var(--color-accent);
+  border-radius: 2rem;
+  color: var(--color-accent);
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+}
+
+nav a.actief {
+  background-color: var(--color-accent);
+  color: #fff;
+}
+
+nav a:hover,
+nav a:focus {
+  background-color: #fff;
+  color: var(--color-inkt);
+}
+
+.held {
+  padding: clamp(2rem, 8vw, 6rem) clamp(1rem, 5vw, 4rem);
+  background-color: var(--color-accent);
+  color: #fff;
+}
+
+.held h1 {
+  margin-top: 0;
+  font-size: clamp(2rem, calc(5vw + 1rem), 4rem);
+  line-height: 1.1;
+}
+
+.held p {
+  margin-bottom: 0;
+}
+
+#programma {
+  width: min(100%, 44rem);
+  margin-inline: auto;
+  padding: clamp(1.5rem, 5vw, 3rem) clamp(1rem, 5vw, 4rem);
+}
+
+.programma {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.programma li {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--color-lijn);
+}
+
+.programma time {
+  flex: 0 0 4rem;
+  color: var(--color-accent);
+}
+
+.programma strong {
+  font-weight: bold;
+}
+
+.programma span {
+  margin-left: auto;
+  color: var(--color-gedempt);
+  text-align: right;
+}
+
+footer {
+  padding: 1.5rem 1rem;
+  color: var(--color-gedempt);
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+/* === vanaf 800px: links op één rij onder het logo === */
+@media (min-width: 800px) {
+  .logo {
+    align-self: stretch;
+    text-align: left;
+  }
+
+  nav,
+  nav ul {
+    width: auto;
+  }
+
+  nav ul {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1200px) {
+  .logo {
+    align-self: auto;
+    width: auto;
+    text-align: left;
+  }
+}
+
