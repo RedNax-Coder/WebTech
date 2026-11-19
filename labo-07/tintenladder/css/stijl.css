@@ -1,10 +1,151 @@
-/* stijl.css - labo 7, tintenladder (reset.css is linked before this file) */
-
-/* === tokens === */
+/* =================================================
+   A. GLOBAL VARIABLES & ROOT SETTINGS
+   ================================================= */
 :root {
+    /* Primary Design Tokens */
+    --hue: 210; 
+    
+    /* Explicit Mapped Colors */
+    --color-papier: hsl(40 30% 97%); /* The light background color */
+    --color-inkt: hsl(210 25% 12%); /* The darkest ink color */
+    --color-gedempt: hsl(210 10% 42%); /* The muted/middle gray color */
 
+    /* Helper variable for the standard S=55% base */
+    --hsl-base-55: hsl(var(--hue) 55% 0%); 
 }
 
-/* === base === */
+/* =================================================
+   B. BODY STRUCTURE (The overall canvas)
+   ================================================= */
 
-/* === the ten steps: one rule per step === */
+body {
+    /* Body is a grid with two rows: auto 1fr. Min height 100svh. */
+    display: grid;
+    grid-template-rows: auto 1fr;
+    min-height: 100svh;
+    /* Optional: Ensure the body background is light for contrast */
+    background-color: var(--color-papier); 
+}
+
+/* =================================================
+   C. HEADER STYLING (The top part)
+   ================================================= */
+
+header {
+    /* General positioning/layout (optional, but useful for presentation) */
+    padding: 2rem; 
+    border-bottom: 1px solid var(--color-gedempt);
+}
+
+h1 {
+    /* Kop in Georgia 1.5rem met regelhoogte 1.2 */
+    font-family: Georgia, serif;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    /* The line below the heading (gedempt and 0.875rem) */
+    font-size: 0.875rem;
+    color: var(--color-gedempt); 
+    margin: 0; 
+}
+
+/* =================================================
+   D. LADDER STRUCTURE (The core element)
+   ================================================= */
+
+.ladder {
+    /* Ladder is a grid with ten equal rows */
+    display: grid;
+    grid-template-rows: repeat(10, 1fr);
+    padding: 2rem; /* Rondom 2rem padding */
+}
+
+.trede {
+    /* Base label styling */
+    font-family: Verdana, sans-serif;
+    font-size: 0.875rem;
+    font-weight: bold;
+    padding-left: 1rem; /* 1rem links */
+    /* Default color setup for the structure */
+    color: var(--color-inkt);
+    background-color: var(--color-papier);
+    /* Ensure the trede text is centered vertically in its grid cell */
+    display: flex;
+    align-items: center;
+    /* Note: We handle background color per shade */
+}
+
+/* -------------------------------------------------
+   E. SHADE MAPPING (The coloring mechanism)
+   
+   These specific nth-child rules are necessary to simulate 
+   the 95% to 5% Lightness gradient specified in the design.
+------------------------------------------------- */
+
+/* Trede 1 (95% - Lightest) */
+.trede:nth-child(1) { 
+    /* L=95% of 55% */
+    background-color: hsl(var(--hue) 55% 95%); 
+}
+
+/* Trede 2 (85%) */
+.trede:nth-child(2) { 
+    /* L=85% of 55% */
+    background-color: hsl(var(--hue) 55% 85%);
+}
+
+/* Trede 3 (75%) - Explicitly defined rule */
+.trede:nth-child(3) { 
+    /* hsl(var(--hue) 55% 75%) */
+    background-color: hsl(var(--hue) 55% 75%); 
+}
+
+/* Trede 4 (65%) */
+.trede:nth-child(4) { 
+    /* L=65% of 55% */
+    background-color: hsl(var(--hue) 55% 65%);
+}
+
+/* Trede 5 (55%) */
+.trede:nth-child(5) { 
+    /* L=55% of 55% (The middle band) */
+    background-color: hsl(var(--hue) 55% 55%); 
+}
+
+/* Trede 6 (45%) - The transition point */
+.trede:nth-child(6) { 
+    /* L=45% of 55% */
+    background-color: hsl(var(--hue) 55% 45%);
+    /* The label must switch from ink color to paper color */
+    color: var(--color-papier);
+    border-color: var(--color-papier);
+}
+
+/* Trede 7 (35%) */
+.trede:nth-child(7) { 
+    /* L=35% of 55% */
+    background-color: hsl(var(--hue) 55% 35%);
+}
+
+/* Trede 8 (25%) */
+.trede:nth-child(8) { 
+    /* L=25% of 55% */
+    background-color: hsl(var(--hue) 55% 25%);
+}
+
+/* Trede 9 (15%) */
+.trede:nth-child(9) { 
+    /* L=15% of 55% */
+    background-color: hsl(var(--hue) 55% 15%);
+}
+
+/* Trede 10 (5% - Darkest) */
+.trede:nth-child(10) { 
+    /* L=5% of 55% (This is the darkest band) */
+    background-color: hsl(var(--hue) 55% 5%);
+    /* At this extreme darkness, the label should also be ink color for contrast */
+    color: var(--color-inkt); 
+}
